@@ -1,0 +1,26 @@
+name: Visitor Badge
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Visitor Badge
+        uses: anmol098/waka-readme-stats@master
+        with:
+          COMMIT_BY_BOT: "true"
+          VISITOR_BADGE: "true"
+          BADGE_STYLE: "for-the-badge"
+          BADGE_LABEL: "Views"
+          BADGE_COLOR: "79C83D"
+          BADGE_LABEL_COLOR: "555555"

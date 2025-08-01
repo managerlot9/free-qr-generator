@@ -3,7 +3,6 @@
 [![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue.svg?style=for-the-badge)](https://github.com/managerlot9/free-qr-generator/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/managerlot9/free-qr-generator?style=for-the-badge)](https://github.com/managerlot9/free-qr-generator/commits/main)
-![Visitor Count](https'://raw.githubusercontent.com/managerlot9/free-qr-generator/main/visitor-badge.svg') 
 
 A fast, powerful, and completely free QR code generator that respects your privacy. Create unlimited, permanent, and custom QR codes with logos. No ads, no registration, no data collection.
 

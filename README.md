@@ -1,14 +1,15 @@
 # Free & Unlimited QR Code Generator
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/managerlot9/free-qr-generator?style=for-the-badge)](https://github.com/managerlot9/free-qr-generator/releases)
-[![GitHub License](https://img.shields.io/github/license/managerlot9/free-qr-generator?style=for-the-badge)](LICENSE)
+[![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue.svg?style=for-the-badge)](https://github.com/managerlot9/free-qr-generator/releases/tag/v1.0.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/managerlot9/free-qr-generator?style=for-the-badge)](https://github.com/managerlot9/free-qr-generator/commits/main)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmanagerlot9%2Ffree-qr-generator&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false&style=for-the-badge)](https://hits.seeyoufarm.com)
 
-A fast, powerful, and completely free QR code generator that respects your privacy. Create unlimited, permanent QR codes with custom colors, shapes, and logos. No ads, no registration, no data collection.
+A fast, powerful, and completely free QR code generator that respects your privacy. Create unlimited, permanent, and custom QR codes with logos. No ads, no registration, no data collection.
 
 **[➡️ Live Demo](https://managerlot9.github.io/free-qr-generator/)**
 
-![Screenshot of the Free QR Code Generator](https://managerlot9.github.io/free-qr-generator/assets/og-image.png)
+![Screenshot of the Free QR Code Generator](https://raw.githubusercontent.com/managerlot9/free-qr-generator/main/assets/og-image.png)
 
 ## ✨ Features
 

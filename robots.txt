@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://managerlot9.github.io/free-qr-generator/sitemap.xml

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundOptions: { color: '#ffffff' },
         imageOptions: { crossOrigin: 'anonymous', margin: 10 }
     });
-
     qrCodeInstance.append(document.getElementById('qr-code-container'));
 
     const textInput = document.getElementById('qr-text');
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backgroundOptions: { color: bgColorInput.value }
         });
     };
-
+    
     const params = new URLSearchParams(window.location.search);
     if (params.has('data')) {
         textInput.value = decodeURIComponent(params.get('data'));
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             text: 'Check out this QR code I created with Free QR Code Generator!',
             url: shareUrl,
         };
-        if (navigator.share) {
+        if (navigator.share && navigator.canShare(shareData)) {
             try {
                 await navigator.share(shareData);
             } catch (err) {

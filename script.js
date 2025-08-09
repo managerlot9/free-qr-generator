@@ -102,12 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const file = new File([blob], "qrcode.png", { type: "image/png" });
 
             let textToSend = "";
-            if (!disableCaption.checked) {
-                if (editCaption.checked) {
-                    textToSend = captionText.value;
-                } else {
-                    textToSend = "Made with https://managerlot9.github.io/free-qr-generator/";
-                }
+            // Исправленная логика:
+            if (disableCaption.checked) {
+                textToSend = "";
+            } else if (editCaption.checked) {
+                textToSend = captionText.value;
+            } else {
+                textToSend = "Made with https://managerlot9.github.io/free-qr-generator/";
             }
 
             const shareData = {

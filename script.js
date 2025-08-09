@@ -118,6 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (textToSend) {
                 shareData.text = textToSend;
             }
+            // Проверка: выводим объект shareData
+            console.log("shareData:", shareData);
 
             if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 await navigator.share(shareData);

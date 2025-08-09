@@ -22,10 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const removeLogo = document.getElementById("remove-logo");
     const downloadBtn = document.getElementById("download-btn");
     const shareBtn = document.getElementById("share-btn");
-    const disableCaption = document.getElementById("disable-caption");
-    const editCaption = document.getElementById("edit-caption");
-    const captionEditGroup = document.getElementById("caption-edit-group");
-    const captionText = document.getElementById("caption-text");
 
     const updateQR = () => {
         qrCode.update({
@@ -67,21 +63,15 @@ document.addEventListener("DOMContentLoaded", () => {
         qrCode.download({ name: "qrcode", extension: "png" });
     });
 
-    // Показывать/скрывать поле для редактирования подписи
-    editCaption.addEventListener("change", () => {
-        if (editCaption.checked) {
-            captionEditGroup.classList.remove("hidden");
-        } else {
-            captionEditGroup.classList.add("hidden");
-        }
-    });
-
     // --- SHARE BUTTON ---
     shareBtn.addEventListener("click", async () => {
         try {
+            // Сохраняем текущий тип
             const prevType = qrCode._options.type;
             qrCode.update({ type: "canvas" });
-            await new Promise(resolve => setTimeout(resolve, 400));
+            await new Promise(resolve => setTimeout(resolve, 400)); // чуть больше времени на рендер
+
+            // Получаем canvas из контейнера
             const container = document.getElementById("qr-code-container");
             const canvas = container.querySelector("canvas");
             if (!canvas) {
@@ -100,27 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const res = await fetch(dataUrl);
             const blob = await res.blob();
             const file = new File([blob], "qrcode.png", { type: "image/png" });
-
-            let textToSend = "";
-            // Исправленная логика:
-            if (disableCaption.checked) {
-                textToSend = "";
-            } else if (editCaption.checked) {
-                textToSend = captionText.value;
-            } else {
-                textToSend = "Made with https://managerlot9.github.io/free-qr-generator/";
-            }
-
             const shareData = {
                 title: "QR Code",
+                text: qrText.value || "QR Code",
                 files: [file]
             };
-            if (textToSend) {
-                shareData.text = textToSend;
-            }
-            // Проверка: выводим объект shareData
-            console.log("shareData:", shareData);
-
             if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 await navigator.share(shareData);
             } else {

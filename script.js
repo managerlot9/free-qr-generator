@@ -69,9 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
             // Сохраняем текущий тип
             const prevType = qrCode._options.type;
             qrCode.update({ type: "canvas" });
-            await new Promise(resolve => setTimeout(resolve, 300));
-            const dataUrl = await qrCode.getRawData("png");
+            await new Promise(resolve => setTimeout(resolve, 400)); // чуть больше времени на рендер
+
+            // Получаем canvas из контейнера
+            const container = document.getElementById("qr-code-container");
+            const canvas = container.querySelector("canvas");
+            if (!canvas) {
+                alert("Ошибка: не удалось получить изображение QR-кода.");
+                qrCode.update({ type: prevType });
+                return;
+            }
+            const dataUrl = canvas.toDataURL("image/png");
             qrCode.update({ type: prevType });
+
+            if (!dataUrl.startsWith("data:image/png")) {
+                alert("Ошибка: не удалось создать PNG-изображение QR-кода.");
+                return;
+            }
+
             const res = await fetch(dataUrl);
             const blob = await res.blob();
             const file = new File([blob], "qrcode.png", { type: "image/png" });
